@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="card">
+        <h2>{{ n_days }}-Day Sales Forecast</h2>
+        <div class="summary">
+            <div class="stat">
+                <span class="stat-value">{{ total }}</span>
+                <span class="stat-label">Total Forecasted Sales</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">{{ average }}</span>
+                <span class="stat-label">Average Daily Forecast</span>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr><th>Date</th><th>Predicted Sales</th></tr>
+            </thead>
+            <tbody>
+                {% for row in forecast %}
+                <tr>
+                    <td>{{ row.order_date }}</td>
+                    <td>{{ row.total_sales }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/">← Run another forecast</a>
+    </div>
+{% endblock %}

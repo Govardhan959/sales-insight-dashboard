@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Forecast Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Sales Forecasting App</h1>
+        <p>Business Insight Dashboard with ML Forecasting</p>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
